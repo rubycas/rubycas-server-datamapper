@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RubyCAS::Server::DataMapper do
+describe RubyCAS::Server::Core::DataMapper do
 
   before(:all) do
    DataMapper.setup(:default, "sqlite::memory:")

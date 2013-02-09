@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rubycas-server-datamapper/version'
+require 'rubycas/server/datamapper/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "rubycas-server-datamapper"
-  gem.version       = RubyCAS::Server::DataMapper::VERSION
+  gem.version       = RubyCAS::Server::Core::DataMapper::VERSION
   gem.authors       = ["Robert Mitwicki"]
   gem.email         = ["robert.mitwicki@opensoftware.pl"]
   gem.description   = %q{DataMapper adapter for RubyCAS Server}
@@ -18,6 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_runtime_dependency "dm-core"
+  gem.add_runtime_dependency "dm-migrations"
   gem.add_runtime_dependency "dm-transactions"
   gem.add_runtime_dependency "dm-timestamps"
   gem.add_runtime_dependency "dm-validations"
@@ -25,4 +26,5 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency "rake"
   gem.add_development_dependency "rspec"
+  gem.add_development_dependency "dm-sqlite-adapter"
 end
